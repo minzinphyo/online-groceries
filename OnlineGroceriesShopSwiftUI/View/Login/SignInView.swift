@@ -45,26 +45,54 @@ struct SignInView: View {
 //                        .multilineTextAlignment(.center)
 //                        .padding(.bottom,30)
                     
-                    HStack{
-                        
-                        Button{
-                            isShowPicker = true
-                        } label: {
-                            
-                            if let countryObj = countryObj{
-                                
-                                Text("\(countryObj.isoCode.getFlag())")
-                                    .font(.customfont(.medium, fontSize: 35))
-                                
-                                Text("+\(countryObj.phoneCode)")
-                                    .font(.customfont(.medium, fontSize: 18))
-                                    .foregroundColor(.primaryText)
-                            }
-                        }
-                        
-                        TextField("Enter Mobile Number", text: $textMobile)
-                            .frame(minWidth: 0, maxWidth: .infinity)
+//                    HStack{
+//                        
+//                        Button{
+//                            isShowPicker = true
+//                        } label: {
+//                            
+//                            if let countryObj = countryObj{
+//                                
+//                                Text("\(countryObj.isoCode.getFlag())")
+//                                    .font(.customfont(.medium, fontSize: 35))
+//                                
+//                                Text("+\(countryObj.phoneCode)")
+//                                    .font(.customfont(.medium, fontSize: 18))
+//                                    .foregroundColor(.primaryText)
+//                            }
+//                        }
+//                        
+//                        TextField("Enter Mobile Number", text: $textMobile)
+//                            .frame(minWidth: 0, maxWidth: .infinity)
+//                    }
+                    
+                    NavigationLink {
+                        //LoginView()
+                    } label: {
+                        Text("Continue with Email Sign In")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
                     }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background( Color(hex: "5383EC"))
+                    .cornerRadius(20)
+                    .padding(.bottom, 8 )
+                    
+                    
+                    NavigationLink {
+                        //SignUpView()
+                    } label: {
+                        Text("Continue with Email Sign Up")
+                            .font(.customfont(.semibold, fontSize: 18))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
+                    .background(.red)
+                    .cornerRadius(20)
+                    .padding(.bottom, 8 )
+
                     
                     Divider()
                         .padding(.bottom,25)
